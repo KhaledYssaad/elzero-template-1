@@ -489,27 +489,27 @@ main .container {
 }
 
 .upload:nth-child(1) .icon-svg {
-    background-image: url('/pics/pdf.svg');
+    background-image: url('pics/pdf.svg');
 }
 
 .upload:nth-child(2) .icon-svg {
-    background-image: url('/pics/psd.svg');
+    background-image: url('pics/psd.svg');
 }
 
 .upload:nth-child(3) .icon-svg {
-    background-image: url('/pics/txt.svg');
+    background-image: url('pics/txt.svg');
 }
 
 .upload:nth-child(4) .icon-svg {
-    background-image: url('/pics/png.svg');
+    background-image: url('pics/png.svg');
 }
 
 .upload:nth-child(5) .icon-svg {
-    background-image: url('/pics/avi.svg');
+    background-image: url('pics/avi.svg');
 }
 
 .upload:nth-child(6) .icon-svg {
-    background-image: url('/pics/zip.svg');
+    background-image: url('pics/zip.svg');
 }
 
 .uploads .upload {
