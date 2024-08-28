@@ -1,0 +1,122 @@
+/* componants  */
+
+:root {
+    --blue-alt-color: #0d69d5;
+    --blue-color: #0075ff;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: hsl(0, 0%, 73%);
+    --main-backgound: #f1f5f9;
+    --text-color: #777;
+    --border-color: hsl(0, 0%, 90%);
+    --main-transition: 0.3s;
+}
+
+main .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+main .container>div {
+    background-color: white;
+    border-radius: 6px;
+    transition: background-color var(--main-transition);
+    padding: 20px;
+}
+
+/* componants  */
+
+/* plans  */
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.plan .plan-head {
+    text-align: center;
+    border: 3px solid white;
+    color: white;
+}
+
+.plan.free .plan-head {
+    background-color: var(--green-color);
+    outline: 3px solid var(--green-color);
+}
+
+.plan.basic .plan-head {
+    background-color: var(--blue-color);
+    outline: 3px solid var(--blue-color);
+}
+
+.plan.premium .plan-head {
+    background-color: var(--orange-color);
+    outline: 3px solid var(--orange-color);
+}
+
+.plan .plan-head h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.plan .plan-head p {
+    font-size: 35px;
+    margin: 5px;
+}
+
+.plan .plan-head p::first-letter {
+    font-size: 24px;
+    vertical-align: super;
+    margin-right: 3px;
+}
+
+.plan ul {
+    margin-top: 0;
+}
+
+.plan ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plan ul li:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.plan ul li p i {
+    margin-right: 5px;
+}
+
+.plan ul li>i {
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.plan button {
+    padding: 5px 12px;
+    width: fit-content;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.plan.free button {
+    background-color: var(--green-color);
+}
+
+.plan.basic button {
+    background-color: var(--blue-color);
+}
+
+.plan.premium button {
+    background-color: var(--orange-color);
+}
+
+/* plans  */

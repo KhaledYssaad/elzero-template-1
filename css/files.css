@@ -1,0 +1,230 @@
+/* componants  */
+
+:root {
+    --blue-alt-color: #0d69d5;
+    --blue-color: #0075ff;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: hsl(0, 0%, 73%);
+    --main-backgound: #f1f5f9;
+    --text-color: #777;
+    --border-color: hsl(0, 0%, 90%);
+    --main-transition: 0.3s;
+}
+
+main .container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    gap: 10px;
+}
+
+@media (max-width: 767px) {
+    main .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .upload {
+        order: -1;
+    }
+}
+
+main .container>.files {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+main .container>div>div {
+    background-color: white;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.svg {
+    background-size: 60px;
+    width: 60px;
+    height: 60px;
+}
+
+/* componants  */
+
+/* files  */
+.file {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.file a {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: var(--main-transition);
+}
+
+.file a:hover {
+    color: var(--blue-color);
+    transform: scale(1.05);
+}
+
+.file .svg {
+    text-align: center;
+    margin: 30px auto 5px;
+    transition: var(--main-transition);
+}
+
+.file:hover .svg {
+    transform: scale(1.02) rotate(8deg);
+    cursor: pointer;
+}
+
+.file .name {
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+.file .publisher {
+    font-size: 14px;
+    color: var(--grey-color);
+    margin: 0;
+}
+
+.file .size-date {
+    font-size: 13px;
+    color: var(--grey-color);
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+    padding: 10px;
+}
+
+.file .size-date p {
+    margin: 0;
+}
+
+/* files  */
+
+/* upload  */
+
+.upload .statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.upload .statistics h3 {
+    margin: 6px;
+    font-size: 20px;
+}
+
+.upload .f-stat {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 6px;
+    gap: 10px;
+}
+
+.upload .f-stat i {
+    font-size: 20px;
+    display: block;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    align-content: center;
+}
+
+.upload .f-stat i.fa-file-pdf {
+    color: var(--blue-color);
+    background-color: hsla(212, 100%, 50%, 0.5);
+}
+
+.upload .f-stat i.fa-file-video {
+    color: var(--orange-color);
+    background-color: hsla(36, 90%, 56%, 0.5);
+}
+
+.upload .f-stat i.fa-file-image {
+    color: var(--green-color);
+    background-color: hsla(137, 60%, 47%, 0.5);
+}
+
+.upload .f-stat i.fa-file-audio {
+    color: var(--red-color);
+    background-color: hsla(4, 76%, 66%, 0.5);
+}
+
+.upload .f-stat i.fa-file-code {
+    color: var(--blue-color);
+    background-color: hsla(212, 100%, 50%, 0.5);
+}
+
+.upload .f-stat i.fa-file-archive {
+    color: var(--orange-color);
+    background-color: hsla(36, 90%, 56%, 0.5);
+}
+
+
+.upload .f-stat .file-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    height: 40px;
+}
+
+.upload .f-stat .file-box p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.upload .f-stat .file-box p:last-child {
+    color: var(--text-color);
+}
+
+.upload .upload-anchor {
+    background-color: var(--blue-color);
+    text-decoration: none;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 6px;
+    width: fit-content;
+    margin: 10px auto;
+    transition: var(--main-transition);
+}
+
+.upload .upload-anchor:hover {
+    background-color: var(--blue-alt-color);
+    transform: scale(1.05);
+}
+
+.upload .upload-anchor i {
+    position: relative;
+}
+
+.upload .upload-anchor:hover i {
+    animation: up-and-down 0.25s linear infinite alternate;
+}
+
+@keyframes up-and-down {
+
+    0% {
+        transform: translateY(2px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-2px);
+    }
+}
+
+/* upload  */

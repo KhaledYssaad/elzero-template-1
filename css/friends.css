@@ -1,0 +1,137 @@
+/* componants  */
+
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: hsl(0, 0%, 73%);
+    --main-backgound: #f1f5f9;
+    --text-color: #777;
+    --border-color: hsl(0, 0%, 90%);
+    --main-transition: 0.3s;
+}
+
+.main-title+.container>div {
+    background-color: white;
+    border-radius: 6px;
+}
+
+main .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+/* componants  */
+
+.friend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.friend .f-head {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.friend .f-head::before,
+.friend .f-head::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: hsl(0, 0%, 30%);
+    position: absolute;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    text-align: center;
+    align-content: center;
+}
+
+.friend .f-head::before {
+    content: "\f0e0";
+    left: 0px;
+}
+
+.friend .f-head::after {
+    content: "\f095";
+    left: 35px;
+}
+
+.friend .f-head img {
+    height: auto;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.friend .f-head h3 {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 16px;
+}
+
+.friend .f-head p {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.friend .f-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    padding: 14px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.friend .f-body i {
+    font-size: 16px;
+    margin-right: 5px;
+    width: 20px;
+
+}
+
+.friend .f-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.friend .f-foot .when-joined {
+    font-size: 13px;
+    color: var(--text-color);
+    text-transform: capitalize;
+}
+
+.friend .f-foot a {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-transform: capitalize;
+    font-size: 12px;
+    transition: var(--main-transition);
+}
+
+.friend .f-foot a.profile {
+    background-color: var(--blue-color);
+}
+
+.friend .f-foot a.remove {
+    background-color: var(--red-color);
+}
