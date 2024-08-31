@@ -36,7 +36,7 @@ ul {
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -70,6 +70,7 @@ header form {
     position: relative;
     padding: 0;
     height: fit-content;
+    margin-left: 28px;
 }
 
 header form input {
@@ -130,6 +131,13 @@ header .profile img {
 }
 
 /* header end  */
+
+
+.menu-bars {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 
 /* nav start  */
 
@@ -202,7 +210,19 @@ nav ul li a::before {
     transition: var(--main-transition);
 }
 
+
 /* Active state */
+
+nav {
+    background-color: white;
+}
+
+@media (min-width:768px) {
+    nav>.xmark {
+        display: none;
+    }
+}
+
 nav ul li a.active {
     color: var(--grey-color);
 }
@@ -237,17 +257,25 @@ nav ul li a span {
 }
 
 @media (max-width:767px) {
-    nav h3 {
-        font-size: 15px;
+    nav {
+        position: fixed;
+        z-index: 999;
+        background-color: white;
+        transform: translate(-160px);
+        transition: var(--main-transition);
     }
 
-    nav h3::before,
-    nav h3::after {
-        display: none;
+
+
+    nav .xmark {
+        position: absolute;
+        right: 16px;
+        top: 12px;
+        font-size: 20px;
     }
 
-    nav ul li a span {
-        display: none;
+    .menu-bars:hover+nav {
+        transform: translate(0);
     }
 
 }
