@@ -69,7 +69,6 @@ header {
 header form {
     position: relative;
     padding: 0;
-    height: fit-content;
     margin-left: 28px;
 }
 
@@ -133,10 +132,30 @@ header .profile img {
 /* header end  */
 
 
-.menu-bars {
+input#sidebar-active {
+    position: absolute;
+    appearance: none;
+}
+
+input#sidebar-active+label {
     position: absolute;
     top: 20px;
     left: 20px;
+}
+
+.menu-bars:hover {
+    cursor: pointer;
+    color: hsl(0, 0%, 30%);
+}
+
+@media (min-width:767px) {
+    .menu-bars {
+        display: none;
+    }
+
+    header form {
+        margin-left: 0px;
+    }
 }
 
 /* nav start  */
@@ -258,7 +277,9 @@ nav ul li a span {
 
 @media (max-width:767px) {
     nav {
+        height: 100%;
         position: fixed;
+        top: 0;
         z-index: 999;
         background-color: white;
         transform: translate(-160px);
@@ -272,10 +293,26 @@ nav ul li a span {
         right: 16px;
         top: 12px;
         font-size: 20px;
+        transition: var(--main-transition);
     }
 
-    .menu-bars:hover+nav {
+    nav .xmark:hover {
+        cursor: pointer;
+        color: hsl(0, 0%, 30%);
+    }
+
+    #sidebar-active:checked~label+nav {
         transform: translate(0);
+    }
+
+    #sidebar-active:checked~#overlay {
+        background-color: transparent;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 500;
+        top: 0;
+        left: 0
     }
 
 }
