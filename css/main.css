@@ -277,7 +277,7 @@ nav ul li a span {
 
 @media (max-width:767px) {
     nav {
-        height: 120svh;
+        height: 120%;
         position: fixed;
         top: 0;
         z-index: 999;
