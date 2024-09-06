@@ -39,6 +39,14 @@ main .container {
     gap: 15px;
 }
 
+
+@media (max-width:767px) {
+
+    main .container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
 /* welcome  */
 
 .welcome {
