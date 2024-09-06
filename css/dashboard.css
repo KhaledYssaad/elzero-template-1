@@ -824,12 +824,8 @@ main .container {
 /* social media */
 
 /* projects table  */
-
-@media (min-width:1200px) {
-
-    .projects-table {
-        grid-column: span 2;
-    }
+.projects-table {
+    grid-column: 1/-1;
 }
 
 .projects-table .table-box {
