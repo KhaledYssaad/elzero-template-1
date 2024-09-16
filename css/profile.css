@@ -37,7 +37,7 @@ main .container {
     --main-transition: 0.3s;
 }
 
-.main-title+.container>div:not(.skill-actibity-box) {
+.main-title+.container>div:not(.skill-actibity-box, .posts) {
     background-color: white;
     padding: 20px;
     border-radius: 6px;
@@ -372,3 +372,94 @@ h3 {
 }
 
 /* activities  */
+
+/* posts  */
+
+.posts {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 16px;
+    background-color: #f1f5f9;
+    padding: 20px;
+}
+
+.posts .section-title {
+    grid-column: 1/-1;
+}
+
+.posts .post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.posts .post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.posts .post-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.posts .post-head img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.posts .post-head .content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.posts .post-head .content h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.posts .post-head .content p {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.posts .post-body {
+    border-top: none;
+    padding: 16px;
+    line-height: 1.6;
+    font-size: 1rem;
+    background-color: var(--background-color);
+}
+
+.posts .post-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.posts .likes {
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+
+/* posts  */
