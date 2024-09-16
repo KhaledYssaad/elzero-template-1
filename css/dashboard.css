@@ -696,19 +696,13 @@ main .container {
 .latest-post .post {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 16px;
     margin-bottom: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.latest-post .post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
 
 
 .latest-post .post-head {
