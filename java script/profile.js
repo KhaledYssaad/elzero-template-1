@@ -8,6 +8,62 @@ function addChild(father, ele) {
 
 //components
 
+//setting
+
+const profileInfo = document.querySelector(".profile-info");
+const personalInfo = profileInfo.querySelector(".personal-info");
+const generalInfo = profileInfo.querySelector(".general-info");
+const settingsIcon = profileInfo.querySelector(".settings");
+
+function togglePersonalInfo() {
+  const isVisible = personalInfo.classList.toggle("visible");
+
+  if (isVisible) {
+    // Ensure maxHeight is set to scrollHeight when visible
+    requestAnimationFrame(() => {
+      personalInfo.style.maxHeight = `${personalInfo.scrollHeight}px`;
+    });
+  } else {
+    // Collapse the section smoothly
+    personalInfo.style.maxHeight = "0";
+  }
+}
+
+function adjustMaxHeight() {
+  // Check if the personal info section is visible
+  if (personalInfo.classList.contains("visible")) {
+    // Make sure to set the height correctly on resize
+    personalInfo.style.maxHeight = `${personalInfo.scrollHeight}px`;
+  } else {
+    // Reset maxHeight if not visible
+    personalInfo.style.maxHeight = "0";
+  }
+}
+
+// Debounce function to avoid excessive recalculations on resize
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+settingsIcon.addEventListener("click", togglePersonalInfo);
+
+// Apply resize listener with debounced function
+window.addEventListener("resize", debounce(adjustMaxHeight, 250));
+
+// Initialize maxHeight on page load
+document.addEventListener("DOMContentLoaded", () => {
+  // Ensure that initial maxHeight is set to 0 if not visible
+  if (!personalInfo.classList.contains("visible")) {
+    personalInfo.style.maxHeight = "0";
+  }
+});
+
+//setting
+
 //letest post
 let posts = document.querySelector(".posts");
 
