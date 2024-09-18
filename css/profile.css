@@ -164,15 +164,17 @@ h3 {
 /* componants  */
 
 /* informations  */
-
 .profile-info {
     grid-area: profile;
     display: flex;
-    align-items: center;
-    transition: all 0.5s ease;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
     position: relative;
+    flex-direction: row;
+    /* Default to row for larger screens */
 }
 
+/* Settings icon */
 .profile-info .settings {
     position: absolute;
     right: 16px;
@@ -189,10 +191,9 @@ h3 {
     font-size: 18px;
 }
 
-/* Hover Effect */
+/* Hover Effect for settings */
 .profile-info .settings:hover {
     background-color: #ddd;
-    border-color: #bbb;
     transform: scale(1.1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
@@ -215,17 +216,20 @@ h3 {
     pointer-events: none;
 }
 
+/* Tooltip visible on hover */
 .profile-info .settings:hover+.tool-tip {
     opacity: 1;
     visibility: visible;
 }
 
+/* General and Personal Info common styles */
 .profile-info .personal-info,
 .profile-info .general-info {
     transition: all 0.5s ease;
     opacity: 1;
 }
 
+/* General info section */
 .profile-info .general-info {
     flex: 1;
     text-align: center;
@@ -249,7 +253,6 @@ h3 {
 .profile-info .general-info .progress-bar {
     height: 6px;
     width: 100px;
-    max-width: 100%;
     background-color: lightgray;
     margin: 6px auto;
     border-radius: 5px;
@@ -276,21 +279,18 @@ h3 {
 }
 
 .profile-info .personal-info {
-    flex: 0;
-    overflow: hidden;
-    opacity: 0;
+    display: none;
+    height: 0;
     max-width: 0;
-    transition: 0.5s ease;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
 }
 
-.profile-info .personal-info.visible {
-    flex: 2;
-    opacity: 1;
-    max-width: 100%;
+.personal-info.visible {
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    transition: 0.5s ease;
 }
-
 
 @media (max-width: 767px) {
     .profile-info {
@@ -298,20 +298,34 @@ h3 {
         align-items: center;
     }
 
-    .profile-info>.general-info,
-    .profile-info>.personal-info {
-        flex-basis: 100%;
-        width: 100%;
-        border: none;
+
+    .profile-info .personal-info {
+        display: flex;
+        flex-direction: column;
+        max-width: none;
+        height: 0;
+
+    }
+
+    .personal-info.visible {
+        height: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile-info {
+        flex-direction: row;
     }
 
     .profile-info .personal-info {
-        max-height: 0;
-        transition: all 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        max-height: none;
+        max-width: 0;
     }
 
-    .profile-info .personal-info.visible {
-        max-height: 100%;
+    .personal-info.visible {
+        max-width: 500px;
     }
 }
 
